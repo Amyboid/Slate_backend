@@ -5,7 +5,7 @@
 ![JWT](https://img.shields.io/badge/JWT-Auth-orange)
 ![BCrypt](https://img.shields.io/badge/BCrypt-Secure-yellow)
 
-A production-ready backend system for role-based authentication (School 🏫, Parent 👨👩👧👦, Student 🎓) with dashboard routing and student achievements management.
+Role Based Authentication System and Backend Prototype
 
 ## 🌟 Features
 
@@ -86,19 +86,17 @@ npm install
 
 ### 4. Environment Setup
 
-Create `.env` file in root directory:
+Create `.env` file in root directory and fill the following variables:
 
 ```bash
-
 # Database
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=slate
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
 
 # JWT
-JWT_SECRET=your_jwt_secret
-
+JWT_SECRET=
 ```
 
 ### 5. Start Server
@@ -107,7 +105,7 @@ JWT_SECRET=your_jwt_secret
 npm start
 ```
 
-**Application URL**: `http://localhost:3000`
+**Application URL**: `http://localhost:3000` or `http://localhost:PORT` (if PORT is defined in the environment)
 
 ## 📚API Documentation
 
@@ -130,12 +128,14 @@ npm start
 
 ### Student Achievements
 
-```bash
-GET /student/achievements/:studentId
-```
+| Method | Endpoint                            | Allowed Roles       |
+| ------ | ----------------------------------- | ------------------- |
+| GET    | `/student/achievements/:studentId`  | Student, Parent     |
+
 
 ## 📂 Project Structure
 
+```
 Slate_backend/
 ├── config/         # Database configuration
 ├── controllers/    # Logic for auth, dashboards, and student data
@@ -148,7 +148,5 @@ Slate_backend/
 │   └── dashboards/ # Role-specific dashboards
 ├── .env            # Environment variables
 └── app.js          # Server entry point
+```
 
-
-
-## Happy Coding😄
