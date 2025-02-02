@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      a:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+      }
+    </style>
     <title>School Dashboard</title>
-</head>
-<body>
-    <h1>Welcome, School Admin</h1>
+  </head>
+  <body>
+    <h1>Welcome, <%= userName %></h1>
     <a href="/auth/logout">Logout</a>
-</body>
+  </body>
 </html>

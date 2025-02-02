@@ -18,6 +18,10 @@ class User {
         );
         return result.insertId;
     }
+    static async findById(userId) {
+        const [rows] = await pool.query('SELECT * FROM Users WHERE ID = ?', [userId]);
+        return rows[0];
+    }
 }
 
 export default User;

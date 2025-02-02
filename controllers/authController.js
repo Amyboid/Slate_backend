@@ -7,9 +7,7 @@ const login = async (req, res) => {
 
     try {
         // Find the user by email
-        const user = await User.findByEmail(email);
-        console.log('user', user);
-        console.log('pass', email, password, role);
+        const user = await User.findByEmail(email); 
 
         // Check if the user exists and the role matches
         if (!user || user.Role !== role) {
