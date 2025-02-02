@@ -1,8 +1,10 @@
+import User from './User.js';
 import pool from '../config/db.js';
 
 class StudentAchievement {
-    static async findByStudentId(studentId) {
-        const [rows] = await pool.query('SELECT * FROM StudentAchievements WHERE student_id = ?', [studentId]);
+    static async findByUserId(userId) {
+        const LinkedStudentID = await User.findLinkedStudentIdByUserId(userId);
+        const [rows] = await pool.query('SELECT * FROM StudentAchievements WHERE StudentID = ?', [LinkedStudentID]);
         return rows;
     }
 }

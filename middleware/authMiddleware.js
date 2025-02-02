@@ -12,6 +12,7 @@ const authMiddleware = (roles) => {
             if (!roles.includes(decoded.role)) {
                 return res.status(403).send('Access Denied');
             }
+            
             req.user = decoded;
             next();
         } catch (error) {

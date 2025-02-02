@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parent Dashboard</title>
 </head>
+
 <body>
     <h1>Welcome, Parent</h1>
+    <h1>Student Achievements</h1>
+    <ul>
+        <% studentAchievements.map(student=> { %>
+            <strong>Achievements of <%= student.Name %></strong><br>
+            <ul>
+                <li>
+                    <%= student.Achievements %>
+                </li>
+            </ul>
+            <% }) %>
+    </ul>
     <a href="/auth/logout">Logout</a>
 </body>
+
 </html>

@@ -1,9 +1,12 @@
+import StudentAchievement from '../models/StudentAchievement.js';
+
 const getSchoolDashboard = (req, res) => {
   res.render('dashboards/school');
 };
 
-const getParentDashboard = (req, res) => {
-  res.render('dashboards/parent');
+const getParentDashboard = async (req, res) => {
+  const studentAchievements  = await StudentAchievement.findByUserId(req.user.userId);
+  res.render('dashboards/parent', {studentAchievements});
 };
 
 const getStudentDashboard = (req, res) => {

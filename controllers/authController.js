@@ -23,7 +23,7 @@ const login = async (req, res) => {
         }
 
         // Generate a JWT token
-        const token = generateToken(user.Id, user.Role);
+        const token = generateToken(user.ID, user.Role);
 
         // Set the token in a cookie and redirect to the appropriate dashboard
         res.cookie('token', token, { httpOnly: true });

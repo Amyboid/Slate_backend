@@ -6,6 +6,11 @@ class User {
         return rows[0];
     }
 
+    static async findLinkedStudentIdByUserId(userId) {
+        const [rows] = await pool.query('SELECT linkedStudentId FROM Users WHERE ID = ?', [userId]);
+        return rows[0].linkedStudentId;
+    }
+
     static async createUser(name, email, password, role, linkedStudentId = null) {
         const [result] = await pool.query(
             'INSERT INTO Users (name, email, password, role, linkedStudentId) VALUES (?, ?, ?, ?, ?)',
